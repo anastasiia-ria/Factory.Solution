@@ -20,6 +20,7 @@
 ## Description
 
 Dr. Sillystringz's Factory lets owner to add and track their engineers and machines.
+![Screen Shot](https://raw.github.com/anastasiia-ria/Factory.Solution/main/wwwroot/Images/screenshot.png)
 
 ## Setup/Installation Requirements
 
