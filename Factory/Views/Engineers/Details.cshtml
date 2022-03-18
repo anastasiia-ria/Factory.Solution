@@ -6,24 +6,36 @@
 
 <h2>Engineer Details</h2>
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h2>@Html.DisplayNameFor(model => model.Status): @Html.DisplayFor(model => model.Status)</h3>
+<h3>@Html.DisplayNameFor(model => model.Status): @Html.DisplayFor(model => model.Status)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This engineer does not contain any machines</p>
+  <p>This engineer is not licensed to repair any machines</p>
 }
 else
 {
-  <h4>Machines this engineer is licensed to repair:</h4>
-  <ul>
+  <h2>Machines this engineer is licensed to repair:</h2>
+  <ul class="details">
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@Html.ActionLink(@join.Machine.Name, "Details", "Machines", new { id = join.MachineId })</li>
+    <li>
+      @using (Html.BeginForm("DeleteMachine", "Engineers"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type="submit" value="X"/ class="delete">
+      }
+      @Html.ActionLink($"{@join.Machine.Name} | {@join.Machine.Status}", "Details", "Machines", new { id = join.MachineId })
+    </li>
   }
   </ul>
 }
 
-<p class="button">@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
-
-<p class="button">@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
-<p class="button">@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+<div class="button-border">
+  <p class="button">@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
+</div>
+<div class="button-border">
+  <p class="button">@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+</div>
+<div class="button-border">
+  <p class="button">@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+</div>

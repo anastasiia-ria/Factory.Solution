@@ -14,8 +14,12 @@
 
   @Html.Label("Select machine")
   @Html.DropDownList("MachineId")
-
-  <input type="submit" value="Save" class="button"/>
+  
+  <div class="button-border">
+    <input type="submit" value="Save" class="button"/>
+  </div>
 }
 
-<p class="button">@Html.ActionLink("Back to list", "Index")</p>
+<div class="button-border">
+  <p class="button">@Html.ActionLink("Back to list", "Index")</p>
+</div>
