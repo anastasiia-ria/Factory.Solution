@@ -18,8 +18,11 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
-      List<Engineer> model = _db.Engineers.ToList();
-      return View(model);
+      List<Engineer> working = _db.Engineers.Where(engineer => engineer.Status == "Working").ToList();
+      List<Engineer> idle = _db.Engineers.Where(engineer => engineer.Status == "Idle").ToList();
+      ViewBag.Working = working;
+      ViewBag.Idle = idle;
+      return View();
     }
 
     public ActionResult Create()

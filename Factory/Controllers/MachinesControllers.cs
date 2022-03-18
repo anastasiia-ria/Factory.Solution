@@ -19,7 +19,13 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
-      return View(_db.Machines.ToList());
+      List<Machine> operational = _db.Machines.Where(machine => machine.Status == "Operational").ToList();
+      List<Machine> malfunctioning = _db.Machines.Where(machine => machine.Status == "Malfunctioning").ToList();
+      List<Machine> repairing = _db.Machines.Where(machine => machine.Status == "Repairing").ToList();
+      ViewBag.Operational = operational;
+      ViewBag.Malfunctioning = malfunctioning;
+      ViewBag.Repairing = repairing;
+      return View();
     }
 
     public ActionResult Create()
