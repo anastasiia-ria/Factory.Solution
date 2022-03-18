@@ -24,6 +24,10 @@ namespace Factory.Controllers
 
     public ActionResult Create()
     {
+      var status = new List<SelectListItem>();
+      status.Add(new SelectListItem() { Text = "Working", Value = "Working" });
+      status.Add(new SelectListItem() { Text = "Idle", Value = "Idle" });
+      ViewBag.Status = status;
       return View();
     }
 
@@ -45,6 +49,10 @@ namespace Factory.Controllers
     }
     public ActionResult Edit(int id)
     {
+      var status = new List<SelectListItem>();
+      status.Add(new SelectListItem() { Text = "Working", Value = "Working" });
+      status.Add(new SelectListItem() { Text = "Idle", Value = "Idle" });
+      ViewBag.Status = status;
       var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
       return View(thisEngineer);
     }
@@ -65,14 +73,14 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-    public ActionResult AddEngineer(Engineer engineer, int MachineId)
+    public ActionResult AddMachine(Engineer engineer, int MachineId)
     {
       if (MachineId != 0)
       {
         _db.EngineerMachine.Add(new EngineerMachine() { MachineId = MachineId, EngineerId = engineer.EngineerId });
         _db.SaveChanges();
       }
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new { id = engineer.EngineerId });
     }
 
     public ActionResult Delete(int id)

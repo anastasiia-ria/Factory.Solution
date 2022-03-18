@@ -24,7 +24,11 @@ namespace Factory.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      var status = new List<SelectListItem>();
+      status.Add(new SelectListItem() { Text = "Operational", Value = "Operational" });
+      status.Add(new SelectListItem() { Text = "Malfunctioning", Value = "Malfunctioning" });
+      status.Add(new SelectListItem() { Text = "Repairing", Value = "Repairing" });
+      ViewBag.Status = status;
       return View();
     }
 
@@ -53,7 +57,11 @@ namespace Factory.Controllers
     public ActionResult Edit(int id)
     {
       var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      var status = new List<SelectListItem>();
+      status.Add(new SelectListItem() { Text = "Operational", Value = "Operational" });
+      status.Add(new SelectListItem() { Text = "Malfunctioning", Value = "Malfunctioning" });
+      status.Add(new SelectListItem() { Text = "Repairing", Value = "Repairing" });
+      ViewBag.Status = status;
       return View(thisMachine);
     }
 
@@ -85,7 +93,7 @@ namespace Factory.Controllers
         _db.SaveChanges();
       }
 
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new { id = machine.MachineId });
     }
 
     public ActionResult Delete(int id)
