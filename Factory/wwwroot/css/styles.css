@@ -75,9 +75,9 @@ header li {
 header a:hover {
   text-decoration: underline;
 }
+
 li {
   font-size: 1.25em;
-  cursor: pointer;
   list-style: none;
 }
 
@@ -135,7 +135,7 @@ label {
 }
 
 .column-header {
-  font-size: 2em;
+  font-size: 1.5em;
   text-decoration: underline;
   font-weight: bold;
 }
