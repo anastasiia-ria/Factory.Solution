@@ -86,13 +86,20 @@ li {
   cursor: pointer;
   text-align: center;
   padding: 10px 0;
-  margin: 10px auto;
   width: 240px;
   border: 1px solid black;
   background-color: transparent;
   text-decoration: none;
   font-size: 1.25em;
   text-transform: uppercase;
+  background-color: #fdc029;
+  margin: 2px;
+}
+
+.button-border {
+  border: 3px solid black;
+  margin: 10px auto;
+  width: min-content;
   background-color: #fdc029;
 }
 
@@ -110,17 +117,21 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
 }
 
-label,
-input,
-select {
+select,
+.input {
   font-size: 1.25em;
   padding: 5px 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #fdc029;
   width: 240px;
+  border: 1px solid black;
+}
+
+label {
+  font-size: 1.25em;
+  padding: 5px 10px;
 }
 
 .column-header {
@@ -133,4 +144,23 @@ select {
   display: flex;
   gap: 100px;
   justify-content: center;
+}
+
+.delete {
+  color: red;
+  font-size: 1.25em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.details li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.details input {
+  background-color: transparent;
+  border: none;
 }
