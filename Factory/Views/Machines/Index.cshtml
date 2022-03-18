@@ -11,6 +11,7 @@
   <h3>No machines have been added yet!</h3>
 } 
 <div class="table">
+  @if (@ViewBag.Operational.Count != 0) {
   <ul>
     <li class="column-header">Operational</li>
      @foreach (Machine machine in @ViewBag.Operational)
@@ -18,6 +19,8 @@
       <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
     }
   </ul>
+  }
+  @if (@ViewBag.Malfunctioning.Count != 0) {
   <ul>
     <li class="column-header">Malfunctioning</li>
      @foreach (Machine machine in @ViewBag.Malfunctioning)
@@ -25,6 +28,8 @@
       <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
     }
   </ul>
+  }
+  @if (@ViewBag.Repairing.Count != 0) {
   <ul>
     <li class="column-header">Being Repaired</li>
      @foreach (Machine machine in @ViewBag.Repairing)
@@ -32,6 +37,7 @@
       <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
     }
   </ul>
+  }
 </div>
 
  <div class="button-border">
