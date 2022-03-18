@@ -1,0 +1,127 @@
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container {
+  margin: auto;
+  margin-top: 190px;
+  text-align: center;
+  width: 600px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  color: #ccc;
+  background: #333;
+  padding: 8px;
+  text-align: center;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  box-shadow: 2px 2px 2px rgba(196, 191, 191, 0.7);
+}
+
+.header {
+  font-family: "Sacramento", cursive;
+  font-size: 3em;
+}
+
+ul {
+  padding: 0;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header li {
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+li {
+  font-size: 1.25em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.button {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 0;
+  margin: 10px auto;
+  width: 240px;
+  border: 1px solid black;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  color: white;
+  background-color: black;
+}
+
+.button:hover a {
+  color: white;
+  background-color: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+label,
+input,
+select {
+  font-size: 1.25em;
+  padding: 5px 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.button-group {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.button-group button {
+  margin: 10px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  transform: rotate(-45deg);
+}
+
+.box {
+  width: 130px;
+  border: 1px solid black;
+  font-size: 0.75em;
+}
