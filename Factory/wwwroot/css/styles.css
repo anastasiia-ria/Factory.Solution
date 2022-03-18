@@ -1,12 +1,18 @@
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-image: url("../Images/pattern.png");
+  background-size: 500px;
+  background-color: #fdc029;
+  margin: 0;
 }
 
 .container {
   margin: auto;
-  margin-top: 190px;
+  padding-top: 220px;
   text-align: center;
-  width: 600px;
+  width: 100%;
+  background-color: rgb(253, 193, 43, 0.9);
+  height: calc(100vh - 220px);
 }
 
 a {
@@ -30,32 +36,45 @@ header {
   top: 0px;
   left: 0px;
   width: 100%;
-  padding: 8px;
   text-align: center;
-  box-shadow: 2px 2px 2px rgba(196, 191, 191, 0.7);
+  border-bottom: 3px solid black;
+  background-color: #fdc029;
 }
 
 .header {
-  font-family: "Sacramento", cursive;
+  font-family: "Bungee Shade", cursive;
   font-size: 3em;
+  padding: 10px;
 }
 
 ul {
   padding: 0;
 }
 
+.menu {
+  border-top: 3px solid black;
+}
+
+#home {
+  border-left: 3px solid black;
+}
 header ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 header li {
-  padding: 0 20px;
+  padding: 10px 20px;
   text-transform: uppercase;
   font-size: 1.5em;
+  border-right: 3px solid black;
 }
 
+header a:hover {
+  text-decoration: underline;
+}
 li {
   font-size: 1.25em;
   cursor: pointer;
@@ -74,15 +93,16 @@ li {
   text-decoration: none;
   font-size: 1.25em;
   text-transform: uppercase;
+  background-color: #fdc029;
 }
 
 .button:hover {
-  color: white;
+  color: #fdc029;
   background-color: black;
 }
 
 .button:hover a {
-  color: white;
+  color: #fdc029;
   background-color: black;
 }
 
@@ -99,29 +119,18 @@ select {
   font-size: 1.25em;
   padding: 5px 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #fdc029;
+  width: 240px;
 }
 
-.button-group {
+.column-header {
+  font-size: 2em;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.table {
   display: flex;
-  margin: auto;
+  gap: 100px;
   justify-content: center;
-}
-
-.button-group button {
-  margin: 10px;
-}
-
-.search-icon {
-  position: absolute;
-  right: 0;
-  background-color: transparent;
-  border: none;
-  font-size: 1em;
-  transform: rotate(-45deg);
-}
-
-.box {
-  width: 130px;
-  border: 1px solid black;
-  font-size: 0.75em;
 }
